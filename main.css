@@ -26,7 +26,7 @@ html
     text-align: center;
     height: 100vh;
     position: relative;
-    font-family: 'Cabin', sans-serif;
+    font-family: Tahoma, sans-serif;;
     color: #ffeded;
     text-transform: uppercase;
     font-size: 7vmin;
@@ -54,5 +54,222 @@ a{
     color: #ffeded;
     text-decoration:none;
 }
+
+:root{
+    --borderPad: 50px;
+    --nameHeight: 40px;
+    --nameWidth: min(300px,100vw - var(--menuWidth) - 3 * var(--borderPad));
+    --nameSize: min(20pt,calc(var(--nameWidth) / 10));
+    --menuWidth: 40px;
+    --menuHeight: 40px;
+    --menuWidthOpen: 120px;
+    --menuHeightOpen: 40px;
+    --menuFontSize: 20px;
+    --elementPad: 50px;
+    --elementWidth: 60vw;
+    --sectionTitleHeight: 60px;
+    --linkDivHeight: 80px;
+    --c0: rgb(255,237,237);
+    --c1: rgba(0, 0, 0, 0);
+  }
+  
+  html{
+    width: 100vw;
+    overflow: visible;
+    overscroll-behavior-y: none;
+  }
+  
+  ::-webkit-scrollbar{
+    width: 0px;
+  }
+  
+  body{
+    background-color: var(--c1);
+    margin: 0px;
+    padding: 0px;
+    overflow: visible;
+  }
+  
+  /* canvas{
+    position: fixed;
+    margin: 0px;
+    top: 0px;
+    padding: 0px;
+    border: 0px;
+    min-height: 100vh;
+    width: 100vw;
+    pointer-events: none;
+  } */
+  
+  .contentDiv{
+    background-color: var(--c1);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--c1);
+    border-radius: 0px;
+  }
+  
+  .contentBox{
+    width: 60vw;
+    margin-top: 2vw;
+    margin-left: 20vw;
+  }
+  
+  #homeScreen{
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+    height: calc(100vh - var(--sectionTitleHeight));
+  }
+  
+  #menu{
+    right: var(--borderPad);
+    top: var(--borderPad);
+    width: var(--menuWidth);
+    height: var(--menuHeight);
+    position: fixed;
+    text-align: right;
+    justify-content:center;
+    overflow: hidden;
+    z-index: 1.5;
+  }
+  
+  .menuToggle{
+    cursor: pointer;
+    position: fixed;
+    background-color: var(--c0);
+    margin: auto;
+  }
+  
+  #menu #open{
+    width: calc(0.10 * var(--menuWidth));
+    height: calc(0.5 * var(--menuHeight));
+    top: calc(var(--borderPad) + 0.25 * var(--menuHeight));
+    right: calc(var(--borderPad) + 0.45 * var(--menuHeight));
+  }
+  
+  #menu #close{
+    height: calc(0.10 * var(--menuWidth));
+    width: calc(0.5 * var(--menuHeight));
+    right: calc(var(--borderPad) + 0.25 * var(--menuHeight));
+    top: calc(var(--borderPad) + 0.45 * var(--menuHeight));
+  }
+  
+  .menuItem{
+    position: fixed;
+    right: calc(var(--borderPad) + 0.25 * var(--menuHeight));
+    text-align: right;
+    font-size: var(--menuFontSize);
+  }
+  
+  #nameDiv{
+    position: absolute;
+    width: var(--nameWidth);
+    height: var(--nameHeight);
+    top: var(--borderPad);
+    left: var(--borderPad);
+    vertical-align: middle;
+  }
+  
+  #nameDiv h1{
+    line-height: var(--nameHeight);
+    text-align: left;
+    font-size: var(--nameSize);
+  }
+  
+  .sectionHeaderDiv{
+    height: var(--sectionTitleHeight);
+    text-align: center;
+    line-height: var(--sectionTitleHeight);;
+    font-size: var(--nameSize);
+    width: var(--elementWidth);
+    margin-left: 0px;
+    margin-top: calc(8 * var(--elementPad));
+  }
+  
+  .sectionDiv{
+    width: var(--elementWidth);
+    margin-left: 0px;
+    margin-left: calc((100vw - var(--elementWidth)) / 2);
+    background-color: var(--c1);
+  }
+  
+  ::selection{
+    color: var(--c1);
+    background: var(--c0);
+  }
+  
+  .linkDiv:hover{
+    background-color: var(--c1);
+    border-color: var(--c0);
+  }
+  
+  .linkDiv:hover *{
+    color: var(--c0);
+  }
+  
+  .halfLine{
+    background-color: var(--c0);
+    height: 4px;
+    width: calc((var(--elementWidth) - var(--elementPad)) / 1);
+    margin-left: calc(var(--elementPad) / 2);
+  }
+  
+  .element{
+    width: var(--elementWidth);
+    margin-left: 0px;
+    /*min-height: 100vh;*/
+    /* margin-top: var(--sectionTitleHeight); */
+    margin-top: 0px;
+    /* margin-bottom: var(--sectionTitleHeight); */
+    margin-bottom: calc(4 * var(--elementPad));
+  }
+  
+  .element h3{
+    font-size: 30px;
+    margin: var(--elementPad);  
+  }
+  
+  .element h5{
+    font-size: 17px;
+    margin: var(--elementPad);
+  }
+  
+  .element p{
+    font-size: 30px;
+    margin: var(--elementPad);
+    line-height: 200%;
+  }
+  
+  .linkDiv {
+    cursor: pointer;
+    text-align: center;
+    height: var(--linkDivHeight);
+  }
+  
+  .linkDiv h4{
+    line-height: var(--linkDivHeight);
+    padding: 0px;
+    margin: 0px;
+    margin-top: 0px;
+    font-size: 20px;
+  }
+  
+  h1,h2,h3,h4,h5,p{
+    color: var(--c0);
+    margin: 0px;
+    font-family: Tahoma, sans-serif;
+  }
+  
+  
+  iframe{
+    position: relative;
+    margin-left: auto;
+    margin: var(--elementPad);
+    width: calc(100% - 2 * var(--elementPad));
+    border: 0px;
+    z-index: 1;
+  }
 
 /*# sourceMappingURL=main.css.map*/
