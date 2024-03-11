@@ -65,6 +65,7 @@ a {
   --elementWidth: 60vw;
   --sectionTitleHeight: 60px;
   --linkDivHeight: 80px;
+  --elementPFontSize: 30px;
   --c0: rgb(255, 237, 237);
   --c1: rgba(0, 0, 0, 0);
 }
@@ -235,7 +236,7 @@ canvas {
 }
 
 .element p {
-  font-size: 30px;
+  font-size: var(--elementPFontSize);
   margin: var(--elementPad);
   line-height: 200%;
 }
